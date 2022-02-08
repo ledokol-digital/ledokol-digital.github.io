@@ -7,9 +7,16 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="../bundle.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script>
+      document.getElementById('treee').addEventListener('loaded', function() { alert('ok') })
+    </script>
   </head>
   <body>
-    <a-scene environment="preset: checkerboard">
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="treee" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf"></a-asset-item>
+      </a-assets>
+
       <!-- Player -->
       <a-entity id="rig" movement-controls position="0 0 5">
         <a-entity id="camera"
@@ -23,8 +30,9 @@
       -->
       <a-entity position="0 1 0"
                 animation-mixer="clip: *;"
-                gltf-model="src: url(https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf);">
+                gltf-model="#treee">
       </a-entity>
     </a-scene>
+    <a href="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf"><hey!/a>
   </body>
 </html>
